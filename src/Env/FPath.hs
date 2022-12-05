@@ -233,6 +233,7 @@ envRcAbsFileTests =
       let go ∷ Env → EnvKey → IO (𝔼 FPathIOError AbsFile)
           go env envKey    = ѥ $ runReaderT (envRcAbsFile envKey relFoo) env
           envFoo           = [absfile|/bar|]
+          homeFoo          ∷ AbsDir → AbsFile
           homeFoo hd       = hd ⫻ [relfile|foo|]
           relFoo           = [relfile|foo|]
           invalAbsBar      = e where 𝕷 e = parse @AbsFile ("bar" ∷ 𝕋)
